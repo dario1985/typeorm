@@ -302,7 +302,7 @@ export class MysqlDriver implements Driver {
             return JSON.stringify(value);
 
         } else if (columnMetadata.type === "datetime" || columnMetadata.type === Date) {
-            return DateUtils.mixedDateToDate(value, true);
+            return DateUtils.mixedDateToDate(value);
 
         } else if (columnMetadata.isGenerated && columnMetadata.generationStrategy === "uuid" && !value) {
             return RandomGenerator.uuid4();
